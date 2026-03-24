@@ -499,6 +499,8 @@ export default function App() {
       vT: form.vT||"[X]", vF: form.vF||"[X]",
       cbRM:!!form.cbRM, cbRL:!!form.cbRL, cbSM:!!form.cbSM, cbSL:!!form.cbSL, cbRamp:!!form.cbRamp,
       cart: form.cart||"",
+      typeAnesthesie: form.typeAnesthesie||"générale",
+      dateSortie: form.dateSortie ? (()=>{const [y,m,d]=(form.dateSortie||"").split("-");return d+"/"+m+"/"+y;})() : "[DATE SORTIE]",
     };
     try {
       const docs = await generateDocs(inter, f, [...selDocs]);
